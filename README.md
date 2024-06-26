@@ -1,4 +1,4 @@
-# CRUD Backend Portifólio
+# CRUD Backend Portfólio
 
 ## 🔨 Detalhes para execução do projeto:
 
