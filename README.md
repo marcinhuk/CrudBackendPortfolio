@@ -1,15 +1,16 @@
-# CRUD Backend Portfólio
+# CRUD Backend Portfolio
 
-## 🔨 Detalhes para execução do projeto:
+## 🔨 How to execute this project:
 
-1. Entrar no diretório onde o projeto será clonado;
-2. Abrir o Git Bash;
-3. Executar git clone https://github.com/marcinhuk/PainelDeChamadas-Frontend.git;
-4. Executar cd ./PainelDeChamadas-Frontend;
-5. Executar npm install;
-6. Com o servidor do MySql/MariaDB já instalado no computador, criar um banco de dados;
-7. Criar um usuário com permissão no banco criado;
-8. Criar um arquivo chamado "constants.js" na raiz do projeto e incluir o objeto abaixo com as configurações do seu ambiente:
+
+1. Go to the folder where the project will be cloned;
+2. Open o Git Bash;
+3. Run git clone https://github.com/marcinhuk/PainelDeChamadas-Frontend.git;
+4. Run cd ./PainelDeChamadas-Frontend;
+5. Run npm install;
+6. With MySql/MariaDB server already installed and running, create a database;
+7. Create a user with permissions on created database;
+8. Create "constants.js" file in the root of the project and include the object below with your environment settings:
 
 ```javascript
 
@@ -27,7 +28,7 @@
 			LOGGING: false,
 		},
 		JWT: {
-			TIME: 3600, // tempo em segundos
+			TIME: 3600, // time in seconds
 			SECRET: 'mysecret'
 		},
 		FILES: {
@@ -37,8 +38,8 @@
 
 ```
 
-9. Descomentar a linha "await database.sync()" no arquivo "/src/app.js" para que as tabelas sejam criadas no banco de dados;
-10. Executar npm start;
-11. Ctrl+C para parar o servidor;
-12. Comentar a linha "await database.sync()" no arquivo "/src/app.js";
-13. Executar npm start.
+9. Uncomment the line "await database.sync()" in the file "/src/app.js" so that the tables are created in the database;
+10. Run npm start;
+11. Ctrl+C to stop the server;
+12. Comment the line "await database.sync()" in the file "/src/app.js";
+13. Run npm start.
