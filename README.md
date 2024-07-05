@@ -11,7 +11,8 @@
 7. Criar um usuário com permissão no banco criado;
 8. Criar um arquivo chamado "constants.js" na raiz do projeto e incluir o objeto abaixo com as configurações do seu ambiente:
 
-<pre><code>
+```javascript
+
 	module.exports = Object.freeze({
 		APP: {
 			PORT: 3099,
@@ -28,9 +29,13 @@
 		JWT: {
 			TIME: 3600, // tempo em segundos
 			SECRET: 'mysecret'
-		}
+		},
+		FILES: {
+			AVATAR: __dirname+"//src//files//avatar//",
+		},
 	})
-</code></pre>
+
+```
 
 9. Descomentar a linha "await database.sync()" no arquivo "/src/app.js" para que as tabelas sejam criadas no banco de dados;
 10. Executar npm start;
