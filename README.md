@@ -38,7 +38,7 @@
 
 ```
 
-9. Uncomment the lines bellow in the file "/src/app.js" so that the tables, default user "admin" and default password "admin" are created in the database;
+9. Uncomment the lines bellow in the file "/src/app.js" so that the tables, default user "admin" and default password "admin" are created in the database:
 
 ```javascript
 		await database.sync()
