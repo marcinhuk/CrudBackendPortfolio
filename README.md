@@ -38,7 +38,14 @@
 
 ```
 
-9. Uncomment the line "await database.sync()" in the file "/src/app.js" so that the tables are created in the database;
+9. Uncomment the lines bellow in the file "/src/app.js" so that the tables, default user "admin" and default password "admin" are created in the database;
+
+```javascript
+		await database.sync()
+		const User = require('./models/users')
+		await User.create({ email: "admin", full_name: "admin", password: "admin"})
+```
+
 10. Run npm start;
 11. Ctrl+C to stop the server;
 12. Comment the line "await database.sync()" in the file "/src/app.js";

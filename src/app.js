@@ -33,8 +33,9 @@ app.get('/', async (req, res) => {
 	try {
 		await database.authenticate()
 
-		//const orderProducts = require('./models/orders')
-		await database.sync()
+		// await database.sync()
+		// const User = require('./models/users')
+		// await User.create({ email: "admin", full_name: "admin", password: "admin"})
 
 		await app.listen(CONSTANTS.APP.PORT, () => {
 			console.log(`Web server running on port ${CONSTANTS.APP.PORT}.`)
