@@ -20,7 +20,7 @@ const findApproval = async (req, res) => {
 	try{
 		const database = require('../db')
 
-		const [orders, metadata] = await database.query(`select orders.id, orders.date, orders.status, users.full_name from orders, users where orders.user_id=users.id and orders.status is null order by orders.id desc`)
+		const [orders, metadata] = await database.query(`select orders.id, DATE_FORMAT(orders.date, '%m-%d-%Y %h:%i:%s') as date, orders.status, users.full_name from orders, users where orders.user_id=users.id and orders.status is null order by orders.id desc`)
 
 		return res.json(orders)
 	}catch(e){
