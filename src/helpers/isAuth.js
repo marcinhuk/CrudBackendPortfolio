@@ -14,12 +14,14 @@ const isAuth = (req, res, next) => {
 				iat: Math.floor(Date.now() / 1000),
 				exp: Math.floor(Date.now() / 1000) + (CONSTANTS.JWT.TIME),
 				user_id: decoded.user_id,
+				full_name: decoded.full_name,
 				usunom: decoded.usunom,
 				imbcod: decoded.imbcod,
 			}, CONSTANTS.JWT.SECRET, {algorithm: 'HS256'})
 
 			req.newToken = `Bearer: ${newToken}`
 			req.user_id = decoded.user_id
+			req.full_name = decoded.full_name
 
 			next()
 		}catch(e){

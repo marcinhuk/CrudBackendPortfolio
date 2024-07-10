@@ -57,10 +57,10 @@ const avatar = (req, res) => {  //                        TRATAR ARQUIVO DE UPLO
 		const user = await User.findAll({where: {id: fields.id}})
 
 		try{
-			fs.unlinkSync(CONSTANTS.FILES.AVATAR+user[0].dataValues.avatar)
+			fs.unlinkSync(CONSTANTS.FILES.AVATARS+user[0].dataValues.avatar)
 		} catch {}
 
-		fs.renameSync(tempFile, CONSTANTS.FILES.AVATAR+newFileName)
+		fs.renameSync(tempFile, CONSTANTS.FILES.AVATARS+newFileName)
 
 		await User.update({ avatar: newFileName}, {where: {id: fields.id}})
 

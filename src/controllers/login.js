@@ -48,6 +48,7 @@ const signin = async (req, res) => {
 					iat: Math.floor(Date.now() / 1000),
 					exp: Math.floor(Date.now() / 1000) + (CONSTANTS.JWT.TIME),
 					user_id: user[0].dataValues.id,
+					full_name: user[0].dataValues.full_name,
 					admin: user[0].dataValues.admin,
 				}, CONSTANTS.JWT.SECRET, {algorithm: 'HS256'})
 

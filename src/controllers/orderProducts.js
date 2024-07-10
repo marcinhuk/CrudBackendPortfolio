@@ -9,7 +9,7 @@ const findAll = async (req, res) => {
 		try{
 			const database = require('../db')
 
-			const [orderProducts, metadata] = await database.query(`select orderproducts.id, products.name, orderproducts.amount from orderproducts, products where orderproducts.product_id = products.id and order_id = ${order_id}`)
+			const [orderProducts, metadata] = await database.query(`select orderproducts.id, products.name, products.price, orderproducts.amount from orderproducts, products where orderproducts.product_id = products.id and order_id = ${order_id}`)
 
 			return res.json(orderProducts)
 		}catch(e){

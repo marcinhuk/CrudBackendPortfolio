@@ -5,6 +5,7 @@ const sequelize = new Sequelize(CONSTANTS.MYSQL.DATABASE, CONSTANTS.MYSQL.USER, 
 	host: CONSTANTS.MYSQL.HOST,
 	port: CONSTANTS.MYSQL.PORT,
 	dialect: CONSTANTS.MYSQL.DIALECT,
+	timezone: '-03:00',
 	logging: CONSTANTS.MYSQL.LOGGING
 })
 

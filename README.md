@@ -32,7 +32,7 @@
 			SECRET: 'mysecret'
 		},
 		FILES: {
-			AVATAR: __dirname+"//src//files//avatar//",
+			AVATARS: __dirname+"//src//files//avatars//",
 		},
 	})
 

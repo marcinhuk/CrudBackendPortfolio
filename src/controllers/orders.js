@@ -6,7 +6,7 @@ const findAll = async (req, res) => {
 	try{
 		const database = require('../db')
 
-		const [orders, metadata] = await database.query(`select orders.id, DATE_FORMAT(orders.date, '%m-%d-%Y %h:%i:%s') as date, orders.status, users.full_name from orders, users where orders.user_id=users.id and users.id = ${req.user_id} order by orders.id desc`)
+		const [orders, metadata] = await database.query(`select orders.id, DATE_FORMAT(orders.date, '%m-%d-%Y %H:%i:%s') as date, orders.status, users.full_name from orders, users where orders.user_id=users.id and users.id = ${req.user_id} order by orders.id desc`)
 
 		return res.json(orders)
 	}catch(e){

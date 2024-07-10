@@ -13,6 +13,11 @@ const productsRoute = require('./routes/products')
 const ordersRoute = require('./routes/orders')
 const orderProductsRoute = require('./routes/orderProducts')
 
+const reportOrdersRoute = require('./routes/reports/orders')
+const reportOrderRoute = require('./routes/reports/order')
+const reportProductsRoute = require('./routes/reports/products')
+const reportUsersRoute = require('./routes/reports/users')
+
 app.use(express.static(CONSTANTS.APP.PUBLIC_PATH))
 
 app.use(express.json())
@@ -24,6 +29,11 @@ app.use('/users', isAuth, isAdmin, usersRoute)
 app.use('/products', isAuth, productsRoute)
 app.use('/orders', isAuth, ordersRoute)
 app.use('/orderproducts', isAuth, orderProductsRoute)
+
+app.use('/reports/orders', isAuth, reportOrdersRoute)
+app.use('/reports/order/:id', isAuth, reportOrderRoute)
+app.use('/reports/products', isAuth, reportProductsRoute)
+app.use('/reports/users', isAuth, reportUsersRoute)
 
 app.get('/', async (req, res) => {
 	return res.json({msg: 'API CRUD teste ok!'})
